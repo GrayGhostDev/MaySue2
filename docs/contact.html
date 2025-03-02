@@ -8,7 +8,7 @@
   <title>Contact Us | May Sue Case Management</title>
   
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
   
   <!-- HTMX -->
   <script src="https://unpkg.com/htmx.org@1.9.6"></script>
@@ -29,16 +29,16 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="images/May_Sue.png" alt="May Sue Case Management Logo">
+        <img src="/images/May_Sue.png" alt="May Sue Case Management Logo">
         <h1>May Sue Case Management</h1>
       </div>
       
       <nav>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/#about" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="/#testimonials" class="nav-link">Testimonials</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
         </ul>
         
@@ -111,7 +111,7 @@
           <h3>Send Us a Message</h3>
           <p class="mb-4">Fill out the form below and we'll get back to you as soon as possible.</p>
           
-          <form id="contact-form" hx-post="submit-contact" hx-target="#form-response" hx-swap="outerHTML" hx-indicator="#form-spinner">
+          <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST" hx-boost="true" hx-target="#form-response" hx-swap="outerHTML" hx-indicator="#form-spinner">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -149,6 +149,8 @@
                 </span>
               </button>
             </div>
+            <!-- Hidden field for Formspree to know where to redirect after submission -->
+            <input type="hidden" name="_next" value="https://username.github.io/may-sue-case-management/thank-you.html">
           </form>
         </div>
       </div>
@@ -163,21 +165,21 @@
       </div>
       
       <div class="faq-container">
-        <div class="faq-item" hx-get="faq/contact/1" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-get="/faq/contact/1" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
           <div class="faq-question">
             <h3>How quickly can I expect a response to my inquiry?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/contact/2" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-get="/faq/contact/2" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
           <div class="faq-question">
             <h3>Do you offer virtual consultations?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/contact/3" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-get="/faq/contact/3" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
           <div class="faq-question">
             <h3>What insurance plans do you accept?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
@@ -199,10 +201,10 @@
         <div class="footer-col">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#testimonials">Testimonials</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>
@@ -210,11 +212,11 @@
         <div class="footer-col">
           <h3>Services</h3>
           <ul>
-            <li><a href="services">Physical Therapy</a></li>
-            <li><a href="services">Occupational Therapy</a></li>
-            <li><a href="services">Case Management</a></li>
-            <li><a href="services">Transportation</a></li>
-            <li><a href="services">Dental Case Management</a></li>
+            <li><a href="/services">Physical Therapy</a></li>
+            <li><a href="/services">Occupational Therapy</a></li>
+            <li><a href="/services">Case Management</a></li>
+            <li><a href="/services">Transportation</a></li>
+            <li><a href="/services">Dental Case Management</a></li>
           </ul>
         </div>
         
@@ -235,7 +237,7 @@
   </footer>
   
   <!-- Custom JS -->
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
   
   <style>
     /* Additional styles for this page */
