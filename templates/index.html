@@ -255,7 +255,7 @@
         </div>
         
         <div class="contact-form">
-          <form id="contact-form" hx-post="/submit-contact" hx-target="#form-response" hx-swap="outerHTML">
+          <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST" hx-boost="true" hx-target="#form-response" hx-swap="outerHTML">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -274,6 +274,8 @@
             </div>
             <div id="form-response"></div>
             <button type="submit" class="btn btn-primary">Send Message</button>
+            <!-- Hidden field for Formspree to know where to redirect after submission -->
+            <input type="hidden" name="_next" value="https://username.github.io/may-sue-case-management/thank-you.html">
           </form>
         </div>
       </div>

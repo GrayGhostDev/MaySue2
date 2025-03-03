@@ -8,7 +8,7 @@
   <title>Our Services | May Sue Case Management</title>
   
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="images/May_Sue.png">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
   <link rel="stylesheet" href="css/services.css">
   
   <!-- HTMX -->
@@ -34,18 +36,40 @@
         <h1>May Sue Case Management</h1>
       </div>
       
-      <nav>
-        <ul class="nav-menu">
-          <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        
-        <button class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/May_Sue.png" alt="May Sue Case Management Logo" height="50">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                  <li><a class="dropdown-item" href="#physical-therapy">Physical Therapy</a></li>
+                  <li><a class="dropdown-item" href="#occupational-therapy">Occupational Therapy</a></li>
+                  <li><a class="dropdown-item" href="#case-management">Case Management</a></li>
+                  <li><a class="dropdown-item" href="#transportation">Transportation</a></li>
+                  <li><a class="dropdown-item" href="#dental-case-management">Dental Case Management</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="testimonials.html">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -182,38 +206,53 @@
       </div>
       
       <div class="faq-container">
-        <div class="faq-item" hx-get="faq/1" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-on:click="this.classList.toggle('active'); this.querySelector('.faq-answer').classList.toggle('show'); this.querySelector('.faq-icon i').classList.toggle('fa-plus'); this.querySelector('.faq-icon i').classList.toggle('fa-minus')">
           <div class="faq-question">
             <h3>What should I expect during my first physical therapy session?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
+          <div class="faq-answer">
+            <p>During your first physical therapy session, our therapist will conduct a comprehensive evaluation of your condition, including a review of your medical history, assessment of your current symptoms, and examination of your strength, flexibility, range of motion, and functional abilities. Based on this evaluation, we'll discuss your goals and develop a personalized treatment plan. The session typically lasts about 60 minutes.</p>
+          </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/2" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-on:click="this.classList.toggle('active'); this.querySelector('.faq-answer').classList.toggle('show'); this.querySelector('.faq-icon i').classList.toggle('fa-plus'); this.querySelector('.faq-icon i').classList.toggle('fa-minus')">
           <div class="faq-question">
             <h3>How long will my therapy sessions last?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
+          <div class="faq-answer">
+            <p>Therapy sessions typically last 45-60 minutes, depending on your specific needs and treatment plan. The total duration of your therapy program will vary based on your condition, progress, and goals. Some patients may achieve their goals in just a few weeks, while others with more complex conditions may benefit from several months of therapy. Your therapist will provide you with an estimated timeline during your initial evaluation.</p>
+          </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/3" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-on:click="this.classList.toggle('active'); this.querySelector('.faq-answer').classList.toggle('show'); this.querySelector('.faq-icon i').classList.toggle('fa-plus'); this.querySelector('.faq-icon i').classList.toggle('fa-minus')">
           <div class="faq-question">
             <h3>Do I need a referral to receive physical therapy?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
+          <div class="faq-answer">
+            <p>In many states, you can access physical therapy services directly without a physician referral through what's called 'direct access.' However, some insurance plans may require a referral for coverage. We recommend checking with your insurance provider regarding their specific requirements. If you do need a referral, we're happy to help you navigate this process.</p>
+          </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/4" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-on:click="this.classList.toggle('active'); this.querySelector('.faq-answer').classList.toggle('show'); this.querySelector('.faq-icon i').classList.toggle('fa-plus'); this.querySelector('.faq-icon i').classList.toggle('fa-minus')">
           <div class="faq-question">
             <h3>What is the difference between physical therapy and occupational therapy?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
           </div>
+          <div class="faq-answer">
+            <p>While both physical therapy (PT) and occupational therapy (OT) aim to improve quality of life and function, they focus on different aspects of recovery and daily living. Physical therapy primarily addresses movement, strength, and physical function of the body as a whole. Occupational therapy focuses more on improving a person's ability to perform daily activities and specific tasks, often with adaptive techniques or equipment. Many patients benefit from both types of therapy working together as part of their rehabilitation plan.</p>
+          </div>
         </div>
         
-        <div class="faq-item" hx-get="faq/5" hx-target="this" hx-swap="outerHTML" hx-trigger="click">
+        <div class="faq-item" hx-on:click="this.classList.toggle('active'); this.querySelector('.faq-answer').classList.toggle('show'); this.querySelector('.faq-icon i').classList.toggle('fa-plus'); this.querySelector('.faq-icon i').classList.toggle('fa-minus')">
           <div class="faq-question">
             <h3>How does case management work with therapy services?</h3>
             <span class="faq-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Case management complements therapy services by coordinating all aspects of your healthcare journey. Our case managers work closely with your physical and occupational therapists to ensure your treatment plan is integrated with other healthcare services you may be receiving. They help navigate insurance coverage, coordinate appointments, connect you with community resources, and advocate for your needs across all healthcare settings. This collaborative approach ensures comprehensive care that addresses all aspects of your health and well-being.</p>
           </div>
         </div>
       </div>
@@ -269,5 +308,80 @@
   
   <!-- Custom JS -->
   <script src="js/main.js"></script>
+  
+  <style>
+    /* FAQ Styles */
+    .faq-item {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .faq-question h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    
+    .faq-icon {
+      color: #4CAF50;
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-answer.show {
+      padding: 0 20px 20px;
+      max-height: 500px;
+    }
+    
+    .faq-item.active {
+      background-color: #f9f9f9;
+    }
+    
+    /* Service tabs styling */
+    .service-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    
+    .service-tabs li {
+      padding: 12px 20px;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 5px 5px 0 0;
+      transition: all 0.3s ease;
+    }
+    
+    .service-tabs li:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .service-tabs li.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
 </body>
 </html> 

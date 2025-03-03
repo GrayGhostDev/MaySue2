@@ -159,6 +159,43 @@ app.post('/submit-contact', (req, res) => {
   }, 1000);
 });
 
+// FAQ endpoints for HTMX requests
+app.get('/faq/contact/:id', (req, res) => {
+  const faqId = req.params.id;
+  let question, answer;
+  
+  switch(faqId) {
+    case '1':
+      question = 'How quickly can I expect a response to my inquiry?';
+      answer = 'We strive to respond to all inquiries within 24-48 business hours. For urgent matters, please call our office directly at (248) 298-6358.';
+      break;
+    case '2':
+      question = 'Do you offer virtual consultations?';
+      answer = 'Yes, we offer virtual consultations for initial assessments and certain follow-up appointments. Please indicate your preference for a virtual consultation when scheduling your appointment.';
+      break;
+    case '3':
+      question = 'What insurance plans do you accept?';
+      answer = 'We accept most major insurance plans, including Medicare, Medicaid, Blue Cross Blue Shield, Aetna, Cigna, and UnitedHealthcare. Please contact our office to verify your specific coverage.';
+      break;
+    default:
+      question = 'Information not found';
+      answer = 'Please contact our office for more information.';
+  }
+  
+  // Send back the expanded FAQ item with the answer visible
+  res.send(`
+    <div class="faq-item active">
+      <div class="faq-question">
+        <h3>${question}</h3>
+        <span class="faq-icon"><i class="fas fa-minus"></i></span>
+      </div>
+      <div class="faq-answer">
+        <p>${answer}</p>
+      </div>
+    </div>
+  `);
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
