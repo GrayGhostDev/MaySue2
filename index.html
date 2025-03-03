@@ -31,7 +31,7 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo">
-        <img src="/images/May_Sue.png" alt="May Sue Case Management Logo">
+        <img src="images/May_Sue.png" alt="May Sue Case Management Logo">
         <h1>May Sue Case Management</h1>
       </div>
       
@@ -95,70 +95,60 @@
         <!-- Physical Therapy Card -->
         <div class="service-card">
           <div class="service-img">
-            <img src="/images/physical-therapy.jpg" alt="Physical Therapy">
+            <img src="images/physical-therapy.jpg" alt="Physical Therapy">
           </div>
           <div class="service-content">
             <h3>Physical Therapy</h3>
             <p>Our physical therapy services focus on restoring movement and function, reducing pain, and preventing further injury through personalized treatment plans.</p>
-            <div hx-get="/services/physical-therapy" hx-target="#service-details" hx-trigger="click">
-              <button class="btn btn-primary">Learn More</button>
-            </div>
+            <a href="services.html#physical-therapy" class="btn btn-primary">Learn More</a>
           </div>
         </div>
         
         <!-- Occupational Therapy Card -->
         <div class="service-card">
           <div class="service-img">
-            <img src="/images/occupational-therapy.jpg" alt="Occupational Therapy">
+            <img src="images/occupational-therapy.jpg" alt="Occupational Therapy">
           </div>
           <div class="service-content">
             <h3>Occupational Therapy</h3>
             <p>Our occupational therapy services help patients develop, recover, and improve the skills needed for daily living and working after illness or injury.</p>
-            <div hx-get="/services/occupational-therapy" hx-target="#service-details" hx-trigger="click">
-              <button class="btn btn-primary">Learn More</button>
-            </div>
+            <a href="services.html#occupational-therapy" class="btn btn-primary">Learn More</a>
           </div>
         </div>
         
         <!-- Case Management Card -->
         <div class="service-card">
           <div class="service-img">
-            <img src="/images/case-management.jpg" alt="Case Management">
+            <img src="images/case-management.jpg" alt="Case Management">
           </div>
           <div class="service-content">
             <h3>Case Management</h3>
             <p>Our case management services coordinate healthcare needs, advocate for patients, and ensure access to appropriate resources for optimal outcomes.</p>
-            <div hx-get="/services/case-management" hx-target="#service-details" hx-trigger="click">
-              <button class="btn btn-primary">Learn More</button>
-            </div>
+            <a href="services.html#case-management" class="btn btn-primary">Learn More</a>
           </div>
         </div>
         
         <!-- Transportation Card -->
         <div class="service-card">
           <div class="service-img">
-            <img src="/images/transportation.jpg" alt="Transportation Services">
+            <img src="images/transportation.jpg" alt="Transportation Services">
           </div>
           <div class="service-content">
             <h3>Transportation</h3>
             <p>Our reliable transportation services ensure patients can access their medical appointments and healthcare services without worry or difficulty.</p>
-            <div hx-get="/services/transportation" hx-target="#service-details" hx-trigger="click">
-              <button class="btn btn-primary">Learn More</button>
-            </div>
+            <a href="services.html#transportation" class="btn btn-primary">Learn More</a>
           </div>
         </div>
         
         <!-- Dental Case Management Card -->
         <div class="service-card">
           <div class="service-img">
-            <img src="/images/dental-case-management.jpg" alt="Dental Case Management">
+            <img src="images/dental-case-management.jpg" alt="Dental Case Management">
           </div>
           <div class="service-content">
             <h3>Dental Case Management</h3>
             <p>Our specialized dental case management services coordinate comprehensive oral healthcare, ensuring patients receive appropriate dental treatments and follow-up care.</p>
-            <div hx-get="/services/dental-case-management" hx-target="#service-details" hx-trigger="click">
-              <button class="btn btn-primary">Learn More</button>
-            </div>
+            <a href="services.html#dental-case-management" class="btn btn-primary">Learn More</a>
           </div>
         </div>
       </div>
@@ -206,7 +196,7 @@
         </div>
         
         <div class="about-img">
-          <img src="/images/about-us.jpg" alt="May Sue Case Management Team">
+          <img src="images/about-us.jpg" alt="May Sue Case Management Team">
         </div>
       </div>
     </div>
@@ -219,11 +209,22 @@
         <h2>What Our Patients Say</h2>
       </div>
       
-      <div class="testimonial-slider" hx-get="/testimonials" hx-trigger="load" hx-swap="innerHTML">
-        <!-- Testimonials will be loaded here via HTMX -->
+      <div class="testimonial-slider">
         <div class="testimonial-item">
           <p class="testimonial-text">"The physical therapy services at May Sue Case Management have been life-changing. After my surgery, I was struggling with mobility, but their dedicated team helped me regain my strength and independence."</p>
           <p class="testimonial-author">- Sarah Johnson</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-text">"The occupational therapy program at May Sue Case Management helped me regain my independence after my stroke. Their personalized approach and dedication to my recovery made all the difference."</p>
+          <p class="testimonial-author">- Michael R.</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-text">"The case management team at May Sue Case Management has been invaluable in coordinating my healthcare needs. They've helped me navigate insurance, find specialists, and ensure I receive the best possible care."</p>
+          <p class="testimonial-author">- Emily S.</p>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-text">"As someone with a chronic condition, I appreciate how May Sue Case Management takes a holistic approach to my care. They've helped me manage my condition effectively while maintaining a high quality of life."</p>
+          <p class="testimonial-author">- David L.</p>
         </div>
       </div>
     </div>
@@ -276,7 +277,7 @@
         </div>
         
         <div class="contact-form">
-          <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST" hx-boost="true" hx-target="#form-response" hx-swap="outerHTML">
+          <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required>
@@ -293,10 +294,8 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" required></textarea>
             </div>
-            <div id="form-response"></div>
             <button type="submit" class="btn btn-primary">Send Message</button>
-            <!-- Hidden field for Formspree to know where to redirect after submission -->
-            <input type="hidden" name="_next" value="https://username.github.io/may-sue-case-management/thank-you.html">
+            <input type="hidden" name="_next" value="thank-you.html">
           </form>
         </div>
       </div>

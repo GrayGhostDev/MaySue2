@@ -90,18 +90,18 @@
       <!-- Service Navigation -->
       <div class="service-nav mb-5">
         <ul class="service-tabs">
-          <li hx-get="services/physical-therapy" hx-target="#service-content" hx-trigger="click" class="active">Physical Therapy</li>
-          <li hx-get="services/occupational-therapy" hx-target="#service-content" hx-trigger="click">Occupational Therapy</li>
-          <li hx-get="services/case-management" hx-target="#service-content" hx-trigger="click">Case Management</li>
-          <li hx-get="services/transportation" hx-target="#service-content" hx-trigger="click">Transportation</li>
-          <li hx-get="services/dental-case-management" hx-target="#service-content" hx-trigger="click">Dental Case Management</li>
+          <li class="active" onclick="showService('physical-therapy')">Physical Therapy</li>
+          <li onclick="showService('occupational-therapy')">Occupational Therapy</li>
+          <li onclick="showService('case-management')">Case Management</li>
+          <li onclick="showService('transportation')">Transportation</li>
+          <li onclick="showService('dental-case-management')">Dental Case Management</li>
         </ul>
       </div>
       
-      <!-- Service Content (HTMX Target) -->
+      <!-- Service Content -->
       <div id="service-content">
-        <!-- Default content (Physical Therapy) -->
-        <div class="service-detail">
+        <!-- Service content will be shown/hidden via JavaScript -->
+        <div id="physical-therapy" class="service-detail">
           <h2 class="text-primary mb-4">Physical Therapy Services</h2>
           
           <div class="service-detail-grid">
@@ -193,6 +193,22 @@
               </div>
             </div>
           </div>
+        </div>
+        
+        <div id="occupational-therapy" class="service-detail" style="display: none;">
+          <!-- Occupational Therapy content -->
+        </div>
+        
+        <div id="case-management" class="service-detail" style="display: none;">
+          <!-- Case Management content -->
+        </div>
+        
+        <div id="transportation" class="service-detail" style="display: none;">
+          <!-- Transportation content -->
+        </div>
+        
+        <div id="dental-case-management" class="service-detail" style="display: none;">
+          <!-- Dental Case Management content -->
         </div>
       </div>
     </div>
@@ -308,6 +324,23 @@
   
   <!-- Custom JS -->
   <script src="js/main.js"></script>
+  <script>
+    function showService(serviceId) {
+      // Hide all service details
+      document.querySelectorAll('.service-detail').forEach(detail => {
+        detail.style.display = 'none';
+      });
+      
+      // Show selected service
+      document.getElementById(serviceId).style.display = 'block';
+      
+      // Update active tab
+      document.querySelectorAll('.service-tabs li').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
   
   <style>
     /* FAQ Styles */
