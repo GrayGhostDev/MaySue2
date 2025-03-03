@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Client testimonials and success stories from May Sue Case Management">
+  <meta name="keywords" content="testimonials, healthcare, physical therapy, occupational therapy, case management, patient stories">
+  <title>Testimonials | May Sue Case Management</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/May_Sue.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <img src="images/May_Sue.png" alt="May Sue Case Management Logo">
+        <h1>May Sue Case Management</h1>
+      </div>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/May_Sue.png" alt="May Sue Case Management Logo" height="50">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                  <li><a class="dropdown-item" href="services.html#physical-therapy">Physical Therapy</a></li>
+                  <li><a class="dropdown-item" href="services.html#occupational-therapy">Occupational Therapy</a></li>
+                  <li><a class="dropdown-item" href="services.html#case-management">Case Management</a></li>
+                  <li><a class="dropdown-item" href="services.html#transportation">Transportation</a></li>
+                  <li><a class="dropdown-item" href="services.html#dental-case-management">Dental Case Management</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="testimonials.html">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Testimonials Hero -->
+  <section class="hero" style="padding: 80px 0;">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Client Testimonials</h2>
+        <p>Read what our clients have to say about their experiences with May Sue Case Management</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials py-5">
+    <div class="container">
+      <div class="testimonial-slider">
+        <div class="testimonial-item">
+          <p class="testimonial-text">"The physical therapy services at May Sue Case Management have been life-changing. After my surgery, I was struggling with mobility, but their dedicated team helped me regain my strength and independence."</p>
+          <p class="testimonial-author">- Sarah Johnson</p>
+        </div>
+
+        <div class="testimonial-item">
+          <p class="testimonial-text">"I can't say enough good things about the occupational therapy program at May Sue. Their therapists are not only skilled but also incredibly compassionate. They've helped me adapt to my new limitations and find ways to continue doing the activities I love."</p>
+          <p class="testimonial-author">- Michael P.</p>
+        </div>
+
+        <div class="testimonial-item">
+          <p class="testimonial-text">"The case management team at May Sue has been a lifeline for our family. Navigating the healthcare system for my mother's complex medical needs was overwhelming until we found them. They coordinated all aspects of her care and advocated for her needs every step of the way."</p>
+          <p class="testimonial-author">- Jennifer R.</p>
+        </div>
+
+        <div class="testimonial-item">
+          <p class="testimonial-text">"As someone with a chronic condition, I've worked with many healthcare providers over the years. The team at May Sue Case Management stands out for their holistic approach and genuine commitment to improving their patients' quality of life."</p>
+          <p class="testimonial-author">- David L.</p>
+        </div>
+
+        <div class="testimonial-item">
+          <p class="testimonial-text">"The transportation service has been a game-changer for me. After my hip replacement, I couldn't drive for several weeks. Their drivers were always punctual, professional, and helped me with my mobility equipment. It made my recovery process so much easier."</p>
+          <p class="testimonial-author">- Eleanor W.</p>
+        </div>
+
+        <div class="testimonial-item">
+          <p class="testimonial-text">"Managing my son's dental care alongside his other medical needs was overwhelming until we found May Sue's dental case management services. They coordinated with specialists, found a dentist experienced with special needs patients, and helped us navigate insurance coverage."</p>
+          <p class="testimonial-author">- Patricia K.</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-controls text-center mt-4">
+        <button class="btn btn-outline-primary me-2" onclick="showTestimonial('prev')">
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <button class="btn btn-outline-primary" onclick="showTestimonial('next')">
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>May Sue Case Management</h3>
+          <p>Providing exceptional healthcare services to improve quality of life through physical therapy, occupational therapy, and case management.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html#physical-therapy">Physical Therapy</a></li>
+            <li><a href="services.html#occupational-therapy">Occupational Therapy</a></li>
+            <li><a href="services.html#case-management">Case Management</a></li>
+            <li><a href="services.html#transportation">Transportation</a></li>
+            <li><a href="services.html#dental-case-management">Dental Case Management</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 1668 Fort St Lincoln Park Mi 48146</li>
+            <li><i class="fas fa-phone"></i> (248) 298-6358</li>
+            <li><i class="fas fa-envelope"></i> maysuemanagement@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 May Sue Case Management. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    
+    function showTestimonial(direction) {
+      testimonials[currentTestimonial].style.display = 'none';
+      
+      if (direction === 'next') {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      } else {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      }
+      
+      testimonials[currentTestimonial].style.display = 'block';
+    }
+    
+    // Show first testimonial by default
+    testimonials[0].style.display = 'block';
+  </script>
+  
+  <style>
+    .testimonial-item {
+      display: none;
+      text-align: center;
+      padding: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-text {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+      font-weight: 500;
+      color: #4CAF50;
+    }
+    
+    .testimonial-controls {
+      margin-top: 30px;
+    }
+    
+    .testimonial-controls button {
+      padding: 10px 20px;
+      margin: 0 10px;
+    }
+  </style>
+</body>
+</html> 
