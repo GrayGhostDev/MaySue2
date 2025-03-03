@@ -115,4 +115,55 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
+  
+  // Service Navigation
+  function showService(serviceId) {
+    // Hide all service details
+    document.querySelectorAll('.service-detail').forEach(detail => {
+      detail.style.display = 'none';
+    });
+    
+    // Show selected service
+    document.getElementById(serviceId).style.display = 'block';
+    
+    // Update active tab
+    document.querySelectorAll('.service-tabs li').forEach(tab => {
+      tab.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    // Update URL hash without scrolling
+    history.pushState(null, null, '#' + serviceId);
+  }
+  
+  // Handle URL hash on page load
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const serviceTab = document.querySelector(`.service-tabs li[onclick*="${hash}"]`);
+    if (serviceTab) {
+      serviceTab.click();
+    }
+  }
+  
+  // FAQ Functionality
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.faq-icon');
+    
+    question.addEventListener('click', () => {
+      // Toggle active class
+      item.classList.toggle('active');
+      
+      // Toggle answer visibility
+      answer.classList.toggle('show');
+      
+      // Rotate icon
+      if (icon) {
+        icon.style.transform = item.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0)';
+      }
+    });
+  });
 }); 
